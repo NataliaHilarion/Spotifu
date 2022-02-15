@@ -11,4 +11,5 @@
   padding-block-start: 1.5rem ;
   padding-block-end: 1.5rem ;
   /* inline-size: 200px; */
+  overflow: auto;
 }

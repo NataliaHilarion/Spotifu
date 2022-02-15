@@ -7,31 +7,22 @@
 
 .layout{
   /* box-shadow: inset 0 0 0 10px red; */
+  block-size: 100vh;
   min-inline-size: var(--minInlineSize);
+  display: grid;
+  grid-template-columns: var(--sidebarInlineSize) 1fr;
+  grid-template-rows: 1fr var(--bottomSize);
+  grid-template-areas: "sidebar page" "footer footer";
 }
 
-.layout-block{
-  display: flex;
+.layout .sideBar{
+  grid-area: sidebar;
 }
 
-.layout-sidebar{
-  inline-size: var(--sidebarInlineSize);
-  block-size: calc(100vh - var(--bottomSize)) ;
-  overflow: auto;
-  flex-shrink: 0;
-  min-block-size: var(--minBLockSize);
-  background: var(--gray60);
-
+.layout .page{
+  grid-area: page;
 }
 
-.layout-main{
-  block-size: calc(100vh - var(--bottomSize)) ;
-  min-block-size: var(--minBLockSize);
-  overflow: auto;
-
-}
-
-.layout-bottom{
-  flex: 1;
-  block-size: var(--bottomSize);
+.layout footer{
+  grid-area: footer;
 }
